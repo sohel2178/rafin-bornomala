@@ -2,38 +2,28 @@
 import React, { useState } from 'react';
 
 import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from './ui/button';
+import Link from 'next/link';
 
-const swarabarna = [
-  'শুরু',
-  'অ',
-  'আ',
-  'ই',
-  'ঈ',
-  'উ',
-  'ঊ',
-  'ঋ',
-  'এ',
-  'ঐ',
-  'ও',
-  'ঔ',
-  'শেষ',
-];
+interface Props {
+  data: string[];
+}
 
-function SwarabornoSerial() {
-  const [items, setItems] = useState([...swarabarna].reverse());
+function SwarabornoSerial({ data }: Props) {
+  const [items, setItems] = useState([...data].reverse());
 
   const handleClick = () => {
     setItems((prevItems) => prevItems.slice(0, -1));
-
-    // setLetterIndex((letterIndex + 1) % swarabarna.length);
-    // setItems([...items.slice(1)]);
   };
 
   const onClickAgain = () => {
-    setItems([...swarabarna].reverse());
+    setItems([...data].reverse());
   };
   return (
-    <div className="flex w-full h-[100vh] justify-center items-center">
+    <div className="flex w-full h-[100vh] flex-col gap-10 justify-center items-center">
+      <Link href="/">
+        <Button variant="outline">Back</Button>
+      </Link>
       <div className="w-1/2 h-1/2 flex justify-center items-center font-bold text-9xl  bg-blue-400 relative">
         <AnimatePresence>
           {items.map((x) => (

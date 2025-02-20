@@ -3,14 +3,16 @@ import React from 'react';
 
 const swarabarna = ['অ', 'আ', 'ই', 'ঈ', 'উ', 'ঊ', 'ঋ', 'এ', 'ঐ', 'ও', 'ঔ'];
 
+const shuffledArray = swarabarna.sort(() => Math.random() - 0.5);
+
 const start = 'শুরু';
 const end = 'শেষ';
 
-swarabarna.unshift(start);
-swarabarna.push(end);
+shuffledArray.unshift(start);
+shuffledArray.push(end);
 
-function SwaraBorno() {
-  return <SwarabornoSerial data={swarabarna} />;
+function SwaraBornoRandom() {
+  return <SwarabornoSerial data={shuffledArray} />;
 }
 
-export default SwaraBorno;
+export default SwaraBornoRandom;
