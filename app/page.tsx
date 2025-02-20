@@ -11,6 +11,14 @@ export default function Home() {
       <Link href="/swaraborno-random">
         <Button variant="outline">এলোমেলো স্বরবর্ণ</Button>
       </Link>
+
+      <Link href="/banjonborno">
+        <Button variant="outline">ব্যঞ্জনবর্ণ</Button>
+      </Link>
+
+      <Link href="/banjonborno-random">
+        <Button variant="outline">এলোমেলো ব্যঞ্জনবর্ণ</Button>
+      </Link>
     </div>
   );
 }
