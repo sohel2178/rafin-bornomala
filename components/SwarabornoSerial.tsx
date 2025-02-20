@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from './ui/button';
 import Link from 'next/link';
+import { Card, CardContent } from './ui/card';
 
 interface Props {
   data: string[];
@@ -24,7 +25,7 @@ function SwarabornoSerial({ data }: Props) {
       <Link href="/">
         <Button variant="outline">Back</Button>
       </Link>
-      <div className="w-1/2 h-1/2 flex justify-center items-center font-bold text-9xl  bg-blue-400 relative">
+      <div className="flex w-2/3 h-2/3 justify-center items-center font-bold text-9xl  relative md:w-1/2 md:h-1/2 rounded-md">
         <AnimatePresence>
           {items.map((x) => (
             <motion.div
@@ -35,9 +36,11 @@ function SwarabornoSerial({ data }: Props) {
               transition={{ duration: 0.5, ease: 'circInOut' }}
               key={x}
               onClick={handleClick}
-              className="w-full cursor-pointer h-full flex justify-center items-center  absolute top-0 left-0 right-0 bottom-0 bg-gray-300"
+              className="absolute top-0 left-0 right-0 bottom-0"
             >
-              {x}
+              <Card className="w-full h-full flex justify-center items-center cursor-pointer">
+                <CardContent>{x}</CardContent>
+              </Card>
             </motion.div>
           ))}
         </AnimatePresence>
